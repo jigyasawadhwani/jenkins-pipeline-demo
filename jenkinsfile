@@ -1,9 +1,13 @@
 pipeline{
   agent any
+  tools{
+    maven 'Maven'
+  }
   stages{
     stage("Test"){
       steps{
         //mvn test
+        sh mvn --version
         echo "executing test"
       }
     }
