@@ -7,7 +7,7 @@ pipeline{
     stage("Test"){
       steps{
         //mvn test
-        sh mvn --version
+        sh "mvn test"
         echo "executing test"
       }
     }
@@ -15,13 +15,13 @@ pipeline{
     stage("build"){
       steps{
         //mvn package
+        sh "mvn package"
         echo "executing build"
       }
     }
     
     stage("deploy to test"){
       steps{
-        //deploy on container
         echo "executing deploy to test"
       }
     }
