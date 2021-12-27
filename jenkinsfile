@@ -1,0 +1,32 @@
+pipeline{
+  agent any
+  stages{
+    stage("Test"){
+      steps{
+        //mvn test
+        echo "executing test"
+      }
+    }
+    
+    stage("build"){
+      steps{
+        //mvn package
+        echo "executing build"
+      }
+    }
+    
+    stage("deploy to test"){
+      steps{
+        //deploy on container
+        echo "executing deploy to test"
+      }
+    }
+    
+    stage("deploy to prod"){
+      steps{
+        //deploy on container
+        echo "executing deploy to production"
+      }
+    }
+  }
+}
